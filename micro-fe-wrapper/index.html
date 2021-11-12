@@ -80,6 +80,12 @@
           <div class="card-body" id="react-container"></div>
         </div>
       </div>
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Vue</h5>
+          <div class="card-body" id="vue-container"></div>
+        </div>
+      </div>
     </div>
     <div class="row console">
       <div class="col">
@@ -100,7 +106,7 @@
     function tellComponents() {
       const name = document.getElementById('yourName').value;
 
-      const reactEl = document.createElement('react-el');
+      const reactEl = document.createElement('shopping-product');
       reactEl.setAttribute('name', name);
       reactEl.setAttribute('onHelloEvt', 'onHelloEvt');
       reactEl.addEventListener('onHelloEvt', (e) => helloEvent('React'));
@@ -124,6 +130,17 @@
 
       logMessage('You', `my name is ${name}`)
 
+      const vueElContainer =  document.getElementById('vue-container')
+      const vueEl = document.createElement('order-form');
+      vueEl.setAttribute('name', name);
+      vueEl.addEventListener('helloEvt', (e) => helloEvent('Vue'));
+
+      if (vueElContainer.children.length > 0) {
+        vueElContainer.removeChild(vueElContainer.children[0]);
+      }
+      vueElContainer.appendChild(vueEl);
+
+
     }
 
     function helloEvent(who) {
@@ -136,9 +153,12 @@
     }
   </script>
 
+  <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
   <script src="http://localhost:5001/main.js"></script>
   <script src="http://localhost:5002/main.js"></script>
+  <script src="http://localhost:5003/order-form.js"></script>
+
 </body>
 </html>

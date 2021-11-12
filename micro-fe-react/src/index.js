@@ -83,4 +83,4 @@ class ReactElement extends HTMLElement {
 
 }
 
-customElements.define('react-el', ReactElement);
+customElements.define('shopping-product', ReactElement);
