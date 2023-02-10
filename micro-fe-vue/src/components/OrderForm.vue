@@ -7,7 +7,8 @@
       product id:  <b>{{ name }}</b> 
       <div><shopping-product :name="name" mode="small"></shopping-product></div>
     </div>
-    <div v-else>상품이 선택되지 않았습니다.</div>
+    <div v-else>상품이 선택되지 않았습니다.</div>  
+  </div>
 </template>
 <script>
   export default {
